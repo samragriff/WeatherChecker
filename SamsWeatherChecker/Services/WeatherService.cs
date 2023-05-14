@@ -8,8 +8,9 @@ namespace SamsWeatherChecker.Services
     public class WeatherService : IWeatherService
     {
         public async Task<WeatherConditionResultViewModel?> GetWeatherByCoordinates(WeatherConditionRequest weatherConditionRequest) {
-            //ADD KEY FROM CONFIG
-            var openWeatherAPI = new OpenWeatherAPI.OpenWeatherApiClient("KEY from appsettings.json");
+            
+            //ToDo ENABLE ADD KEY FROM CONFIG - appsettings.json
+            var openWeatherAPI = new OpenWeatherAPI.OpenWeatherApiClient("Add key here - Eventually from appsettongs.json/key vault");
             // Use async version wherever possible
             //var query = openWeatherAPI.Query("bedford");
             WeatherConditionResultViewModel? weatherConditionResult = new WeatherConditionResultViewModel();
