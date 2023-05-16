@@ -1,0 +1,7 @@
+﻿@model WeatherConditionViewModel;
+
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="CurrentWeather">
+    <label asp-for="@Model.LocationName"></label>
+    <input type="text" min-length="3" asp-for="@Model.LocationName" />
+    <button type="submit">Check Weather</button>
+</form>

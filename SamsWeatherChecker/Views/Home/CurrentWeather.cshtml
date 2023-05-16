@@ -1,45 +1,40 @@
-﻿
-@model WeatherConditionResultViewModel
+﻿@model WeatherConditionViewModel
+@{
+    ViewData["Title"] = "Results";
+}
+
+<div class="text-center">
 <h1>Current Weather</h1>
+
+@await Html.PartialAsync("_WeatherSearchPartial")
 
 @if (!string.IsNullOrEmpty(Model.ErrorMessage))
 {
     <p class="text-danger">@Model.ErrorMessage</p>
-    <a href="/home/index">Search Again</a>
 }
 else
 {
-    <div class="w-100">
         <p>(temperature values in degress celsius)</p>
-
-        <div class="w-50">
-            <label asp-for="@Model.Location.Name"></label>
-            <p>@Model.Location.Name</p>
+            <label asp-for="@Model.LocationName"></label>
+            <p>@Model.LocationName</p>
             <label>Lat/Long</label>
-            <p>@Model.Location.Lat, @Model.Location.Lon</p>
+            <p>@Model.Lat, @Model.Lon</p>
 
-            <label asp-for="@Model.WeatherTemperaturesCelsius.Current"></label>
-            <p>@Model.WeatherTemperaturesCelsius.Current</p>
+            <label asp-for="@Model.CurrentTemp"></label>
+            <p>@Model.CurrentTemp</p>
 
-            <label asp-for="@Model.WeatherTemperaturesCelsius.Min"></label>
-            <p>@Model.WeatherTemperaturesCelsius.Min</p>
+            <label asp-for="@Model.MinTemp"></label>
+            <p>@Model.MinTemp</p>
 
-            <label asp-for="@Model.WeatherTemperaturesCelsius.Max"></label>
-            <p>@Model.WeatherTemperaturesCelsius.Max</p>
+            <label asp-for="@Model.MaxTemp"></label>
+            <p>@Model.MinTemp</p>
 
             <label asp-for="@Model.Sunrise"></label>
             <p>@Model.Sunrise.TimeOfDay</p>
 
             <label asp-for="@Model.Sunset"></label>
             <p>@Model.Sunset.TimeOfDay</p>
-        </div>
-    </div>
-
-    <div class="w-50">
-       
-    </div>
-
 }
-
+</div>
 
 

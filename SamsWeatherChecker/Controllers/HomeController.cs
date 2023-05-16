@@ -26,33 +26,42 @@ namespace SamsWeatherChecker.Controllers
         }
 
         [HttpPost]
-        public IActionResult CurrentWeather(WeatherConditionViewModel weatherConditionViewModel)
+        public async Task<IActionResult> CurrentWeather(WeatherConditionViewModel weatherConditionViewModel)
         {
-            //GET LAT LONG FROM LOCATION STRING (town/city/postcode)
-            //WeatherConditionRequest weatherConditionRequest = _weatherService.GetCoordinates(weatherConditionViewModel.Location).Result;
-            WeatherConditionRequest weatherConditionRequest = new WeatherConditionRequest() {
-                Location = weatherConditionViewModel.Location            
-            };
+            if (!ModelState.IsValid)
+            {
+                return View(new WeatherConditionViewModel
+                {
+                    ErrorMessage = string.Join("; ", ModelState.Values
+                                        .SelectMany(x => x.Errors)
+                                        .Select(x => x.ErrorMessage))
+                });
+            }
 
-            //GET WEATHER FROM CO-ORDINATES
+            WeatherConditionRequest weatherConditionRequest = new WeatherConditionRequest();
+            weatherConditionRequest.Location = weatherConditionViewModel.LocationName;            
+
             try
             {
-                var weatherConditionResult = _weatherService.GetWeatherByCoordinates(weatherConditionRequest);
-                Console.WriteLine(weatherConditionResult.Result);
-                return View(weatherConditionResult.Result);
+                //USE MAPPER?
+                var weatherConditionResult = await _weatherService.GetWeatherByCoordinates(weatherConditionRequest);
+                weatherConditionViewModel.LocationName = weatherConditionResult?.Location.Name;
+                weatherConditionViewModel.Lat = weatherConditionResult?.Location.Lat;
+                weatherConditionViewModel.Lon = weatherConditionResult?.Location.Lon;
+                weatherConditionViewModel.Sunrise = weatherConditionResult.Sunrise;
+                weatherConditionViewModel.Sunset = weatherConditionResult.Sunset;
+                weatherConditionViewModel.CurrentTemp = weatherConditionResult.WeatherTemperaturesCelsius.Current;
+                weatherConditionViewModel.MinTemp = weatherConditionResult.WeatherTemperaturesCelsius.Min;
+                weatherConditionViewModel.MaxTemp = weatherConditionResult.WeatherTemperaturesCelsius.Max;
+                return View(weatherConditionViewModel);
             }
             catch (Exception ex)
             {
-                return View(new WeatherConditionResultViewModel
+                return View(new WeatherConditionViewModel
                 {
-                    ErrorMessage = _configuration.GetValue("ErrorMessages.WeatherResultError", "Invalid Location, please check and try again")
+                    ErrorMessage = _configuration.GetValue("ErrorMessages:WeatherResultError", "Invalid Location, please check and try again")
                 });
             }            
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

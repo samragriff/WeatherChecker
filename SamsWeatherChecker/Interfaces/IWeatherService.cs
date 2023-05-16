@@ -4,8 +4,6 @@ namespace SamsWeatherChecker.Interfaces
 {
     public interface IWeatherService
     {
-        Task<WeatherConditionResultViewModel?> GetWeatherByCoordinates(WeatherConditionRequest weatherConditionRequest);
-
-        //Task<WeatherConditionRequest> GetCoordinates(string location);
+        Task<WeatherConditionModel?> GetWeatherByCoordinates(WeatherConditionRequest weatherConditionRequest);
     }
 }

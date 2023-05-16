@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iAw+7zmZS9ZGqXJOC69g6NMKmQLOvntkZKr7SHXAZdTWRLElvsqvDgg2jB0qipdhq6TcnwlSYgVLldTsgJ6WRA==",
+  "dgSpecHash": "ePhpgXzo8+uQylPHE2piTquRPEX3CuAHv6BJkAoCEP+8T+pz7ZKHPheSfGASGguq40h5TxzZ+YcyfzZqiqVBjw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samra\\source\\repos\\SamsWeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj",
+  "projectFilePath": "C:\\Users\\samra\\source\\repos\\WeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samra\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\samra\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

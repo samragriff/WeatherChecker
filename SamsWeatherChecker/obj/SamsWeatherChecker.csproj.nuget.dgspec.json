@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samra\\source\\repos\\SamsWeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj": {}
+    "C:\\Users\\samra\\source\\repos\\WeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samra\\source\\repos\\SamsWeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj": {
+    "C:\\Users\\samra\\source\\repos\\WeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samra\\source\\repos\\SamsWeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj",
+        "projectUniqueName": "C:\\Users\\samra\\source\\repos\\WeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj",
         "projectName": "SamsWeatherChecker",
-        "projectPath": "C:\\Users\\samra\\source\\repos\\SamsWeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj",
+        "projectPath": "C:\\Users\\samra\\source\\repos\\WeatherChecker\\SamsWeatherChecker\\SamsWeatherChecker.csproj",
         "packagesPath": "C:\\Users\\samra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samra\\source\\repos\\SamsWeatherChecker\\SamsWeatherChecker\\obj\\",
+        "outputPath": "C:\\Users\\samra\\source\\repos\\WeatherChecker\\SamsWeatherChecker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\samra\\AppData\\Roaming\\NuGet\\NuGet.Config",

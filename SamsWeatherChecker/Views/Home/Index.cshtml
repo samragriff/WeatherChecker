@@ -1,10 +1,9 @@
 ﻿@model WeatherConditionViewModel;
+@{
+    ViewData["Title"] = "Home";
+}
 
 <div class="text-center">
     <h1 class="display-4">Sams Weather Checker</h1>
-    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="CurrentWeather">
-        <label asp-for="@Model.Location"></label>
-        <input type="text" min-length="3" asp-for="@Model.Location"/>
-        <button type="submit">Check Weather</button>
-    </form>
+    <partial name="~/Views/Shared/_WeatherSearchPartial.cshtml" />   
 </div>
