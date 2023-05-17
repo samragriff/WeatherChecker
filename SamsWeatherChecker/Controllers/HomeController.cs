@@ -32,9 +32,7 @@ namespace SamsWeatherChecker.Controllers
             {
                 return View(new WeatherConditionViewModel
                 {
-                    ErrorMessage = string.Join("; ", ModelState.Values
-                                        .SelectMany(x => x.Errors)
-                                        .Select(x => x.ErrorMessage))
+                    ErrorMessage = ModelState?.Values.FirstOrDefault()?.Errors?.FirstOrDefault()?.ErrorMessage
                 });
             }
 
